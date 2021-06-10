@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./App.css"
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -13,6 +14,14 @@ function App() {
     <div className="App">
       <Navbar/>
     </div>
+    <Switch>
+
+      <Route exact path="/">
+      <Home/>
+      </Route>
+
+    </Switch>
+
     </Router>
   ); 
 }
