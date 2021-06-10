@@ -1,5 +1,5 @@
 import React from 'react'
-
+import logo from "../assets/logo.svg"
 const Home = () => {
     return (
         <div className="main">
@@ -12,6 +12,9 @@ const Home = () => {
                       Duis vel nisi eu nulla dignissim faucibus.
                        Suspendisse lorem lacus, egestas sodales ultrices ve
                        </p>
+            </div>
+            <div className="logo">
+                <img src={logo} alt="fortnine logo"/>
             </div>
         </div>
     )
