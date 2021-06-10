@@ -1,4 +1,6 @@
 body{
+    background: url(./assets/Fortnite-BG.png);
+    background-size: cover;
     font-size: 16px;
     margin: 0;
     padding: 0;

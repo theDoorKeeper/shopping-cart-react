@@ -20,7 +20,7 @@ ul{
 /*     width: 80%; */
     height: 3rem;
     color: wheat;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.555);
     gap: 2rem;
 }
 #home{
