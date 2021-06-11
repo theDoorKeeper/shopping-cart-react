@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react'
 
 const Store = () => {
         const [category,setCategory]=useState('featured')
-        const itemArray=[];
+        const [itemArray,setItemArray]=useState([])
 
         const getData = async ()=>{
-           const response = await fetch("https://fortnite-api.com/v2/shop/br",{mode:'corse'})
-           const data = await response.json()
-           console.log(data)
+           const response = await fetch("https://fortnite-api.com/v2/shop/br",{mode:'cors'})
+           const jsonfile = await response.json()
+           setItemArray( jsonfile.data.featured.entries )
         }
     useEffect(() => {
             getData();
+            console.log(itemArray)
 
     }, [])
 
