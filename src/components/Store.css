@@ -72,6 +72,19 @@
     width: 13rem;
    /*  cursor: url("../assets/cursor.png"); */
 }
+.card-icon:hover{
+    scale: 1.5;
+    animation: MoveUpDown 2s linear infinite;
+}
+@keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+
 .card-details{
     height: 2rem;
 }
