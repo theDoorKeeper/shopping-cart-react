@@ -2,7 +2,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./App.css"
@@ -22,7 +21,7 @@ function App() {
       </Route>
 
 
-      <Route exact path="/">
+      <Route exact path="/shop">
       <Store/>
       </Route>
 
