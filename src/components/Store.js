@@ -9,16 +9,26 @@ const Store = () => {
            const jsonfile = await response.json()
            setItemArray( jsonfile.data[category].entries )
         }
-    useEffect(() => {
-          getData(category) ;
-            console.log(itemArray)
 
-    }, [category])
+
+            useEffect(() => {
+                getData(category);
+
+            }, [category])
+
+  /*           useEffect(() => {
+                
+            }, [itemArray]) */
+
+
+
+
+
 
     return (
         <div className="Store">
-            <button className="category-btn" id="daily"> daily</button>
-            <button className="category-btn" id="featured"> featured</button>
+            <button className="category-btn" id="daily" onClick={()=>{setCategory('daily')}}> daily</button>
+            <button className="category-btn" id="featured" onClick={()=>{setCategory('featured')}}> featured</button>
             
         </div>
     )
