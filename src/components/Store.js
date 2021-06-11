@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 const Store = () => {
         const [category,setCategory]=useState('daily')
         const [itemArray,setItemArray]=useState([])
+        const [displayedItems,setDisplayedItems]=useState([])
+
 
         const getData = async (category)=>{
            const response = await fetch("https://fortnite-api.com/v2/shop/br",{mode:'cors'})
@@ -16,9 +18,16 @@ const Store = () => {
 
             }, [category])
 
-  /*           useEffect(() => {
-                
-            }, [itemArray]) */
+             useEffect(() => {
+                setDisplayedItems(itemArray.map((item,index) => {
+                    return <div key={index} className="card">
+
+                        <div className="card-title">{item.items[0].name}</div>
+                        <img src={item.items[0].images.featured} alt="item icon"/>
+
+                    </div>
+                }))
+            }, [itemArray]) 
 
 
 
@@ -29,7 +38,7 @@ const Store = () => {
         <div className="Store">
             <button className="category-btn" id="daily" onClick={()=>{setCategory('daily')}}> daily</button>
             <button className="category-btn" id="featured" onClick={()=>{setCategory('featured')}}> featured</button>
-            
+            {displayedItems}
         </div>
     )
 }
