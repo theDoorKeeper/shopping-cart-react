@@ -5,7 +5,6 @@ const Store = () => {
         const [itemArray,setItemArray]=useState([])
         const [displayedItems,setDisplayedItems]=useState([])
 
-
         const getData = async (category)=>{
            const response = await fetch("https://fortnite-api.com/v2/shop/br",{mode:'cors'})
            const jsonfile = await response.json()
@@ -24,7 +23,12 @@ const Store = () => {
                         <div className="card-title"><h2>{item.items[0].name}</h2></div>
                         <img className="card-icon" src={item.items[0].images.featured ? item.items[0].images.featured : item.items[0].images.icon} alt="item icon"/>
                         <div className="card-details"><h5>{item.items[0].description}</h5> <br/> </div>
-                        <div className="card-price"><h6>{item.regularPrice} <img className="vbuck-icon"src={"https://fortnite-api.com/images/vbuck.png"} alt="vbuck icon"/></h6></div>
+                        <div className="card-price"><h6>{item.regularPrice} <img className="vbuck-icon"src={"https://fortnite-api.com/images/vbuck.png"} alt="vbuck icon"/>
+                        <button className="card-buy" id={item.items[0].id}>Add to cart</button>
+                        </h6>
+                        
+                        </div>
+                        
                     </div>
                 }))
             }, [itemArray]) 
