@@ -1,0 +1,40 @@
+.main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+
+img{
+    height: 20rem;
+    max-width: 20rem;
+    fill: black;
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    animation-name: up-down;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: both;
+    animation-play-state: running;;
+}
+@keyframes up-down{
+    0%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(-30px);
+    }
+}
+.filter{
+    filter: brightness(0%);
+}
+
+
+.title{
+    width: 60%;
+    color:#ffffff
+}
+
