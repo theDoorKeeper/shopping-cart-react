@@ -1,0 +1,85 @@
+.store{
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border: black 10px solid;
+    gap : 2rem  
+}
+
+.buttons{
+    display: flex;
+    border: black 3px solid;
+    width: 80%;
+    justify-content: space-around;
+}
+.category-btn{
+    height: 5rem;
+    width: 25%;
+    font-family: "Burbank Big Condensed";
+    font-size: 3rem;
+    cursor: pointer;
+}
+.category-btn:hover {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both ;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+.catalogue{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.205);
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.card{
+    height: 30rem;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+/*     flex-wrap: wrap; */
+    border: black 1px solid;
+    align-items: center;
+    background: #5b2b8f69;
+    cursor: url("../assets/cursor.png"),auto;
+}
+.card-icon{
+    height: 13rem;
+    width: 13rem;
+   /*  cursor: url("../assets/cursor.png"); */
+}
+.card-details{
+    height: 2rem;
+}
+.card-price{
+    height: 3rem;
+}
+
+.vbuck-icon{
+    height: 3rem;
+    width: 3rem;
+}
