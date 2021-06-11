@@ -1,7 +1,7 @@
  @font-face {font-family: "Burbank Big Condensed"; src: url("//db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot"); src: url("//db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.woff") format("woff"), url("//db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/cdc8c3de1e6bd5a9a67c6a001f9fedd0.svg#Burbank Big Condensed") format("svg"); } 
 
 body{
-    background: url(./assets/Fortnite-BG.png);
+    background: url(./assets/fortnite-BG.jpg);
     background-size: cover;
     font-size: 32px;
     font-family: "Burbank Big Condensed";
