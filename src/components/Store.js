@@ -22,9 +22,10 @@ const Store = () => {
                 setDisplayedItems(itemArray.map((item,index) => {
                     return <div key={index} className="card">
 
-                        <div className="card-title">{item.items[0].name}</div>
-                        <img src={item.items[0].images.featured} alt="item icon"/>
-
+                        <div className="card-title"><h2>{item.items[0].name}</h2></div>
+                        <img src={item.items[0].images.featured ? item.items[0].images.featured : item.items[0].images.icon} alt="item icon"/>
+                        <div className="card-details"><h5>{item.items[0].description}</h5></div>
+                        <div className="card-price"><h6>{item.regularPrice} <img src={"https://fortnite-api.com/images/vbuck.png"} alt="vbuck icon"/></h6></div>
                     </div>
                 }))
             }, [itemArray]) 
