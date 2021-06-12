@@ -1,24 +1,24 @@
-import React from 'react'
-import {NavLink} from "react-router-dom";
-import "./Navbar.css"
-const Navbar = () => {
-    return (
-        <div>
-            <ul>
-                <li id="home">
-                    <NavLink activeClassName="active" className="nav-element" exact to="/"> home </NavLink>
-                </li>
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
-                <li>
-                <NavLink activeClassName="active" className="nav-element" exact to="/shop"> shop </NavLink>
-                </li>
+const Navbar = () => (
+  <div>
+    <ul>
+      <li id="home">
+        <NavLink activeClassName="active" className="nav-element" exact to="/"> home </NavLink>
+      </li>
 
-                <li>
-                <NavLink activeClassName="active" className="nav-element" exact to="/cart"> cart </NavLink>
-                </li>
-            </ul>
-        </div>
-    )
-}
+      <li>
+        <NavLink activeClassName="active" className="nav-element" exact to="/shop"> shop </NavLink>
+      </li>
 
-export default Navbar
+      <li>
+        <NavLink activeClassName="active" className="nav-element" exact to="/cart"> cart </NavLink>
+      </li>
+    </ul>
+  </div>
+);
+
+export default Navbar;
