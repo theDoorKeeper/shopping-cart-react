@@ -13,18 +13,18 @@ const Store = (props) => {
            setItemArray( jsonfile.data[category].entries )
         }
 
-            useEffect(() => {
-                console.log(cart)
-            }, [cart])
+        useEffect(() => {
+            console.log(cart)
+        }, [cart])
 
-            useEffect(() => {
-                getData(category);
+        useEffect(() => {
+            getData(category);
 
-            }, [category])
+        }, [category])
 
-             useEffect(() => {
-                setDisplayedItems(itemArray.map((item,index) => {
-                    return <div key={index} className="card" id={item.items[0].id}>
+        useEffect(() => {
+            setDisplayedItems(itemArray.map((item,index) => {
+                 return <div key={index} className="card" id={item.items[0].id}>
                         <div className="card-title"><h2>{item.items[0].name}</h2></div>
                         <img className="card-icon" src={item.items[0].images.featured ? item.items[0].images.featured : item.items[0].images.icon} alt="item icon"/>
                         <div className="card-details"><h5>{item.items[0].description}</h5> <br/> </div>

@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import "./App.css"
 import Home from "./components/Home";
 import Store from "./components/Store";
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 function App() {
   const [cartArray,setCartArray]=useState([]);
 
