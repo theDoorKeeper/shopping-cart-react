@@ -32,7 +32,7 @@ function App() {
       </Route>
 
       <Route exact path="/cart">
-      <Cart cart={cartArray} />
+      <Cart cartArray={cartArray} />
       </Route>
 
     </Switch>
