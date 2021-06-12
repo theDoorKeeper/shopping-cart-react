@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Cart = (props) => {
-    const {cartArray} = props
+    const [displayedCart,setDisplayedCart] = useState([])
+    const {cartArray} = props;
+
+    
+
     return (
         <div>
             
