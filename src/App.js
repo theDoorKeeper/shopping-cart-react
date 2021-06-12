@@ -16,7 +16,7 @@ function App() {
   const [cartArray, setCartArray] = useState([]);
 
   const addToCart = (item) => {
-    setCartArray((prevState) => prevState.concat(item));
+    setCartArray((prevState) => prevState.concat({ ...item, number: 1 }));
   };
   return (
     <Router>
