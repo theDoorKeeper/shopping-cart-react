@@ -8,6 +8,7 @@ import "./App.css"
 import Home from "./components/Home";
 import Store from "./components/Store";
 import React, { useState } from 'react'
+import Cart from "./components/Cart";
 function App() {
   const [cartArray,setCartArray]=useState([]);
 
@@ -28,6 +29,10 @@ function App() {
 
       <Route exact path="/shop">
       <Store cart={cartArray} addItem={addToCart}/>
+      </Route>
+
+      <Route exact path="/cart">
+      <Cart cart={cartArray} />
       </Route>
 
     </Switch>
