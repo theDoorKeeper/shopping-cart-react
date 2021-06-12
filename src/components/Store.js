@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import "./Store.css"
-const Store = () => {
+const Store = (props) => {
         const [category,setCategory]=useState('daily')
         const [itemArray,setItemArray]=useState([])
         const [displayedItems,setDisplayedItems]=useState([])
-        const [cartArray,setCartArray]=useState([]);
+       const  {cart,addItem}=props;
 
 
         const getData = async (category)=>{
@@ -13,10 +13,9 @@ const Store = () => {
            setItemArray( jsonfile.data[category].entries )
         }
 
-        const addToCart =(item)=>{
-                setCartArray(cartArray.concat(item))
-        }
-
+            useEffect(() => {
+                console.log(cart)
+            }, [cart])
 
             useEffect(() => {
                 getData(category);
@@ -30,7 +29,7 @@ const Store = () => {
                         <img className="card-icon" src={item.items[0].images.featured ? item.items[0].images.featured : item.items[0].images.icon} alt="item icon"/>
                         <div className="card-details"><h5>{item.items[0].description}</h5> <br/> </div>
                         <div className="card-price"><h6>{item.regularPrice} <img className="vbuck-icon"src={"https://fortnite-api.com/images/vbuck.png"} alt="vbuck icon"/>
-                        <button className="card-buy " id={item.items[0].id} onClick={()=>{addToCart(item)}}> <span>Add to cart </span></button>
+                        <button className="card-buy " id={item.items[0].id} onClick={()=>{addItem(item)}}> <span>Add to cart </span></button>
                         </h6>
                         
                         </div>

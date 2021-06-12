@@ -7,8 +7,13 @@ import Navbar from "./components/Navbar";
 import "./App.css"
 import Home from "./components/Home";
 import Store from "./components/Store";
-
+import React, { useEffect, useState } from 'react'
 function App() {
+  const [cartArray,setCartArray]=useState([]);
+
+  const addToCart =(item)=>{
+    setCartArray(prevState=>prevState.concat(item))
+}
   return (
     <Router> 
     <div className="App">
@@ -22,7 +27,7 @@ function App() {
 
 
       <Route exact path="/shop">
-      <Store/>
+      <Store cart={cartArray} addItem={addToCart}/>
       </Route>
 
     </Switch>
