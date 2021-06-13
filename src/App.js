@@ -1,10 +1,11 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable react/jsx-filename-extension */
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/Home';
@@ -14,10 +15,8 @@ import Cart from './components/Cart';
 
 function App() {
   const [cartArray, setCartArray] = useState([]);
-
-  const addToCart = (item) => {
-    setCartArray((prevState) => prevState.concat({ ...item, number: 1 }));
-  };
+  
+  
   return (
     <Router>
       <div className="App">
@@ -30,7 +29,7 @@ function App() {
           </Route>
 
           <Route exact path="/shop">
-            <Store cart={cartArray} addItem={addToCart} />
+            <Store cart={cartArray} setCartArray={setCartArray} />
           </Route>
 
           <Route exact path="/cart">
