@@ -7,17 +7,17 @@ const Store = (props) => {
   const [itemArray, setItemArray] = useState([]);
   const [displayedItems, setDisplayedItems] = useState([]);
   // eslint-disable-next-line react/prop-types
-  const { cart, setCartArray } = props;
+  const { cart, addToCart } = props;
 
   const getData = async (type) => {
     const response = await fetch('https://fortnite-api.com/v2/shop/br', { mode: 'cors' });
     const jsonfile = await response.json();
     setItemArray(jsonfile.data[type].entries);
   };
-  const addToCart = (item) => {
+  /* const addToCart = (item) => {
     setCartArray((prvState) => {
       if (!prvState.length) {
-        /*      console.log("empty") */
+       
         return prvState.concat({ item, amount: 1 });
       } if (prvState.filter((element) => element.item.offerId === item.offerId).length) {
         return prvState.map((element) => {
@@ -32,7 +32,7 @@ const Store = (props) => {
 
       return prvState.concat({ item, amount: 1 });
     });
-  };
+  }; */
 
   useEffect(() => {
     console.log('cartaray', cart);

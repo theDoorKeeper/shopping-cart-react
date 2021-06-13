@@ -16,6 +16,26 @@ import Cart from './components/Cart';
 function App() {
   const [cartArray, setCartArray] = useState([]);
 
+  const addToCart = (item) => {
+    setCartArray((prvState) => {
+      if (!prvState.length) {
+        /*      console.log("empty") */
+        return prvState.concat({ item, amount: 1 });
+      } if (prvState.filter((element) => element.item.offerId === item.offerId).length) {
+        return prvState.map((element) => {
+          if (element.item.offerId === item.offerId) {
+            console.log(element.amount);
+            element.amount += 1;
+            return element;
+          }
+          return element;
+        });
+      }
+
+      return prvState.concat({ item, amount: 1 });
+    });
+  };
+
   return (
     <Router>
       <div className="App">
@@ -28,7 +48,7 @@ function App() {
           </Route>
 
           <Route exact path="/shop">
-            <Store cart={cartArray} setCartArray={setCartArray} />
+            <Store cart={cartArray} addToCart={addToCart} />
           </Route>
 
           <Route exact path="/cart">
