@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/Home';
@@ -15,8 +15,7 @@ import Cart from './components/Cart';
 
 function App() {
   const [cartArray, setCartArray] = useState([]);
-  
-  
+
   return (
     <Router>
       <div className="App">
