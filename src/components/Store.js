@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from 'react';
 import './Store.css';
 
@@ -6,16 +7,35 @@ const Store = (props) => {
   const [itemArray, setItemArray] = useState([]);
   const [displayedItems, setDisplayedItems] = useState([]);
   // eslint-disable-next-line react/prop-types
-  const { cart, addItem } = props;
+  const { cart, setCartArray } = props;
 
   const getData = async (type) => {
     const response = await fetch('https://fortnite-api.com/v2/shop/br', { mode: 'cors' });
     const jsonfile = await response.json();
     setItemArray(jsonfile.data[type].entries);
   };
+  const addToCart = (item) => {
+    setCartArray((prvState) => {
+      if (!prvState.length) {
+        /*      console.log("empty") */
+        return prvState.concat({ item, amount: 1 });
+      } if (prvState.filter((element) => element.item.offerId === item.offerId).length) {
+        return prvState.map((element) => {
+          if (element.item.offerId === item.offerId) {
+            console.log(element.amount);
+            element.amount += 0.5;
+            return element;
+          }
+          return element;
+        });
+      }
+
+      return prvState.concat({ item, amount: 1 });
+    });
+  };
 
   useEffect(() => {
-    console.log(cart);
+    console.log('cartaray', cart);
   }, [cart]);
 
   useEffect(() => {
@@ -24,8 +44,7 @@ const Store = (props) => {
 
   useEffect(() => {
     setDisplayedItems(itemArray.map((item) => (
-      // eslint-disable-next-line react/jsx-filename-extension
-      <div key={item.items[0].id} className="card" id={item.items[0].id}>
+      <div key={item.offerId} className="card" id={item.offerId}>
         <div className="card-title"><h2>{item.items[0].name}</h2></div>
         <img className="card-icon" src={item.items[0].images.featured ? item.items[0].images.featured : item.items[0].images.icon} alt="item icon" />
         <div className="card-details">
@@ -39,7 +58,7 @@ const Store = (props) => {
             {item.regularPrice}
             {' '}
             <img className="vbuck-icon" src="https://fortnite-api.com/images/vbuck.png" alt="vbuck icon" />
-            <button type="button" className="card-buy " id={item.items[0].id} onClick={() => { addItem(item); }}>
+            <button type="button" className="card-buy " id={item.offerId} onClick={() => { addToCart(item); }}>
               {' '}
               <span>Add to cart </span>
             </button>
