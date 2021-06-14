@@ -39,7 +39,7 @@ function App() {
     array.forEach(element=>{
       let price=0 ;
       if(element.amount<=1){
-        console.log(1)
+        console.log("unique")
          price = element.item.regularPrice;
          setTotalPrice(prvState=> prvState+price)
       }
