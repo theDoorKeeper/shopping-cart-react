@@ -7,36 +7,19 @@ const Store = (props) => {
   const [itemArray, setItemArray] = useState([]);
   const [displayedItems, setDisplayedItems] = useState([]);
   // eslint-disable-next-line react/prop-types
-  const { cart, addToCart } = props;
+  const { cart, addToCart , giveTotalPrice , totalPrice} = props;
 
   const getData = async (type) => {
     const response = await fetch('https://fortnite-api.com/v2/shop/br', { mode: 'cors' });
     const jsonfile = await response.json();
     setItemArray(jsonfile.data[type].entries);
   };
-  /* const addToCart = (item) => {
-    setCartArray((prvState) => {
-      if (!prvState.length) {
-       
-        return prvState.concat({ item, amount: 1 });
-      } if (prvState.filter((element) => element.item.offerId === item.offerId).length) {
-        return prvState.map((element) => {
-          if (element.item.offerId === item.offerId) {
-            console.log(element.amount);
-            element.amount += 0.5;
-            return element;
-          }
-          return element;
-        });
-      }
 
-      return prvState.concat({ item, amount: 1 });
-    });
-  }; */
 
   useEffect(() => {
     console.log('cartaray', cart);
-  }, [cart]);
+    giveTotalPrice(cart)
+  }, [cart,giveTotalPrice]);
 
   useEffect(() => {
     getData(category);
@@ -58,7 +41,9 @@ const Store = (props) => {
             {item.regularPrice}
             {' '}
             <img className="vbuck-icon" src="https://fortnite-api.com/images/vbuck.png" alt="vbuck icon" />
-            <button type="button" className="card-buy " id={item.offerId} onClick={() => { addToCart(item); }}>
+            <button type="button" className="card-buy " id={item.offerId} onClick={() => {
+               addToCart(item);
+             }}>
               {' '}
               <span>Add to cart </span>
             </button>
@@ -68,7 +53,11 @@ const Store = (props) => {
 
       </div>
     )));
-  }, [itemArray]);
+  }, [itemArray,addToCart]);
+
+  useEffect(() => {
+    console.log('total Price',totalPrice)
+  }, [totalPrice]);
 
   return (
     <div className="store">
@@ -96,6 +85,7 @@ const Store = (props) => {
       <div className="catalogue">
         {displayedItems}
       </div>
+      {totalPrice}
     </div>
   );
 };
