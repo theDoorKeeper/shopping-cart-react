@@ -50,6 +50,17 @@ function App() {
     })
   }
 
+
+  const incrementItem = (array,id)=>{
+      setCartArray(array.map(element => {
+        if (element.item.offerId === id){
+          element.amount += 1;
+          return element;
+        }
+        return element
+      }))
+  }
+
   return (
     <Router>
       <div className="App">
@@ -66,7 +77,7 @@ function App() {
           </Route>
 
           <Route exact path="/cart">
-            <Cart cartArray={cartArray} />
+            <Cart cartArray={cartArray} incrementItem={incrementItem} />
           </Route>
 
         </Switch>
