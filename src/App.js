@@ -61,6 +61,21 @@ function App() {
       }))
   }
 
+  const decrementItem = (array,id)=>{
+    setCartArray(array.map(element => {
+      if (element.item.offerId === id){
+        element.amount -= 1;
+        return element;
+      }
+      return element
+    }))
+}
+const deleteItem = (array,id)=>{
+  setCartArray(array.filter(element => 
+   element.item.offerId !== id
+  ))
+}
+
   return (
     <Router>
       <div className="App">
@@ -77,7 +92,8 @@ function App() {
           </Route>
 
           <Route exact path="/cart">
-            <Cart cartArray={cartArray} incrementItem={incrementItem} />
+            <Cart cartArray={cartArray} incrementItem={incrementItem}
+             decrementItem={decrementItem} deleteItem={deleteItem} totalPrice={totalPrice}  />
           </Route>
 
         </Switch>
