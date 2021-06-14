@@ -104,7 +104,8 @@ const getItemsNumber = (array)=>{
 
           <Route exact path="/cart">
             <Cart cartArray={cartArray} incrementItem={incrementItem}
-             decrementItem={decrementItem} deleteItem={deleteItem} totalPrice={totalPrice}  />
+             decrementItem={decrementItem} deleteItem={deleteItem} totalPrice={totalPrice}
+             totalItems={totalItems} getItemsNumber={getItemsNumber}  />
           </Route>
 
         </Switch>
