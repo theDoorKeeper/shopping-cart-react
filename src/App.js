@@ -16,6 +16,7 @@ import Cart from './components/Cart';
 function App() {
   const [cartArray, setCartArray] = useState([]);
   const [totalPrice,setTotalPrice] = useState(0);
+  const [totalItems,setTotalItems]= useState(0);
 
   const addToCart = (item) => {
     setCartArray((prvState) => {
@@ -77,6 +78,13 @@ const deleteItem = (array,id)=>{
   setCartArray(array.filter(element => 
    element.item.offerId !== id
   ))
+}
+const getItemsNumber = (array)=>{
+  let number = 0;
+  array.forEach(element=>{
+    number+=element.amount
+  })
+  setTotalItems(number)
 }
 
   return (
