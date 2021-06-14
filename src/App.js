@@ -15,13 +15,11 @@ import Cart from './components/Cart';
 
 function App() {
   const [cartArray, setCartArray] = useState([]);
+  const [totalPrice,setTotalPrice] = useState(0);
 
   const addToCart = (item) => {
     setCartArray((prvState) => {
-      if (!prvState.length) {
-        /*      console.log("empty") */
-        return prvState.concat({ item, amount: 1 });
-      } if (prvState.filter((element) => element.item.offerId === item.offerId).length) {
+      if (prvState.filter((element) => element.item.offerId === item.offerId).length) {
         return prvState.map((element) => {
           if (element.item.offerId === item.offerId) {
             console.log(element.amount);
@@ -36,6 +34,22 @@ function App() {
     });
   };
 
+  const giveTotalPrice = (array)=>{
+    setTotalPrice(0)
+    array.forEach(element=>{
+      let price=0 ;
+      if(element.amount<=1){
+        console.log(1)
+         price = element.item.regularPrice;
+         setTotalPrice(prvState=> prvState+price)
+      }
+      else {
+         price = element.item.regularPrice * element.amount; 
+         setTotalPrice(prvState=> prvState+price)
+        }   
+    })
+  }
+
   return (
     <Router>
       <div className="App">
@@ -48,7 +62,7 @@ function App() {
           </Route>
 
           <Route exact path="/shop">
-            <Store cart={cartArray} addToCart={addToCart} />
+            <Store cart={cartArray} addToCart={addToCart} giveTotalPrice={giveTotalPrice} totalPrice={totalPrice} />
           </Route>
 
           <Route exact path="/cart">
