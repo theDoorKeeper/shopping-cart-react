@@ -64,7 +64,10 @@ function App() {
   const decrementItem = (array,id)=>{
     setCartArray(array.map(element => {
       if (element.item.offerId === id){
-        element.amount -= 1;
+        if(element.amount>1) {
+          element.amount -= 1;
+          return element 
+        }
         return element;
       }
       return element
