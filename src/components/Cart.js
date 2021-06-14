@@ -4,24 +4,25 @@ import React, { useEffect, useState } from 'react';
 
 const Cart = (props) => {
   const [displayedCart, setDisplayedCart] = useState([]);
-  const { cartArray } = props;
-
+  const { cartArray,/* incrementItem  */} = props;
+  
   useEffect(() => {
     setDisplayedCart(cartArray.map((data) => (
-      <div key={data.item.items[0].id} className="card" id={data.item.items[0].id}>
-        <div className="card-title"><h2>{data.item.items[0].name}</h2></div>
-        <img className="card-icon" src={data.item.items[0].images.featured ? data.item.items[0].images.featured : data.item.items[0].images.icon} alt="item icon" />
+      <div key={data.item.offerID} className="card" id={data.item.offerID}>
+        <div className="card-title"><h2>{data.item.item.items[0].name}</h2></div>
+        <img className="card-icon" src={data.item.item.items[0].images.featured ? data.item.item.items[0].images.featured : data.item.item.items[0].images.icon} alt="item icon" />
         <div className="card-details">
-          <h5>{data.item.items[0].description}</h5>
+          <h5>{data.item.item.items[0].description}</h5>
           {' '}
           <br />
           {' '}
         </div>
         <div className="card-price">
           <h6>
-            {data.item.regularPrice}
+            {data.item.item.regularPrice}
             {' '}
             <img className="vbuck-icon" src="https://fortnite-api.com/images/vbuck.png" alt="vbuck icon" />
+            {/* <button type='button' onClick={()=>} */}
           </h6>
 
         </div>
