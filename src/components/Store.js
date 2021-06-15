@@ -24,11 +24,26 @@ const Store = (props) => {
     setItemArray(jsonfile.data[type].entries);
   };
 
-/*    const getCardBackground = (rarity)=>{
+    const getCardBackground = (rarity)=>{
     if(rarity==="rare"){
-
+      return rare
     }
-  }  */
+    else if(rarity==="epic"){
+      return epic
+    }
+    else if(rarity==="legendary"){
+      return legendary
+    }
+    else if(rarity==="common"){
+      return common
+    }
+    else if(rarity==="uncommon"){
+      return uncommon
+    }
+    else if(rarity==="myhtical"){
+      return mythical
+    }
+  } 
 
   useEffect(() => {
     console.log('cartaray', cart);
