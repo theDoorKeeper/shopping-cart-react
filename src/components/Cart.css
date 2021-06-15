@@ -1,0 +1,71 @@
+
+.cart-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+
+.bought-items{
+    padding: 3rem;
+    gap: 2px;
+    display: flex;
+    width: 50%;
+    min-height: 20em;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.199);
+
+}
+.checkout-sidebar{
+    padding: 3rem;
+    width: 20%;
+    background: rgba(0, 0, 0, 0.199);
+}
+
+
+.checkout-card{
+    height: 20rem;
+    width: 10rem;
+    border: black 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.checkout-title{
+    display: flex;
+    height: 3rem;
+    width: 10rem;
+    background: rgba(0, 0, 0, 0.479);
+    font-size: smaller;
+    justify-content: space-between;
+
+}
+.delete-btn{
+    background: none;
+    border: none;
+    font-size: xx-large;
+    font-weight: 900;
+    cursor: pointer;
+    text-align: start;
+
+}
+
+.checkout-icon{
+    height: 9rem;
+    width : 9rem;
+}
+.checkout-btn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: xx-large;
+    font-weight: 900;
+}
+.vbuck-icon-checkout{
+    height: 1.5rem;
+    width: 1.5rem;
+}
