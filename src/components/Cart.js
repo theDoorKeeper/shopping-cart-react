@@ -13,7 +13,7 @@ import mythical from "../assets/mythic.png"
 
 const Cart = (props) => {
   const [displayedCart, setDisplayedCart] = useState([]);
-  const { cartArray, incrementItem ,decrementItem, deleteItem } = props;
+  const { cartArray, incrementItem ,decrementItem, deleteItem , totalPrice} = props;
   
   const getCardBackground = (rarity)=>{
     if(rarity==="rare"){
@@ -62,7 +62,7 @@ const Cart = (props) => {
     <div className="cart-wrapper" >
       <div className="bought-items">
       <div className="checkout-header"> 
-      total items : 
+      total items : {totalPrice}
       <br/>
       total price :
        </div>
