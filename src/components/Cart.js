@@ -61,14 +61,14 @@ const Cart = (props) => {
   return (
     <div className="cart-wrapper" >
       <div className="bought-items">
-      {displayedCart}
+      <div className="checkout-header"> 
+      total items : 
+      <br/>
+      total price :
+       </div>
+        {displayedCart}
       </div>
-
-      <div className="checkout-sidebar">
-        <div className="sidebar-title">Checkout:</div>
-        
-      </div>
-     
+       
     </div>
   );
 };
