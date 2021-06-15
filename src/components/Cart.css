@@ -17,10 +17,14 @@
     background: rgba(0, 0, 0, 0.199);
 
 }
-.checkout-sidebar{
-    padding: 3rem;
-    width: 20%;
-    background: rgba(0, 0, 0, 0.199);
+.checkout-header{
+    height:5rem;
+    border: red 2px solid;
+    align-self: flex-start;
+    background-color: rgba(0, 0, 0, 0.301);
+    width: 100%;
+    color: whitesmoke;
+   /*  background: rgba(0, 0, 0, 0.199); */
 }
 
 

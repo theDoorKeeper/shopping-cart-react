@@ -76,6 +76,7 @@
     background: rgba(0, 0, 0, 0.205);
     justify-content: center;
     padding: 2rem;
+    gap:5px;
 }
 
 .card{
