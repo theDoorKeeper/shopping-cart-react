@@ -38,7 +38,7 @@ const Cart = (props) => {
 
   useEffect(() => {
     setDisplayedCart(cartArray.map((data) => (
-      <div key={data.item.offerId} className="checkout-card" id={data.item.offerId}>
+      <div key={data.item.offerId} className="checkout-card" id={data.item.offerId} style={{backgroundImage: `url(${getCardBackground(data.item.items[0].rarity.value)})`}}>
         <div className="checkout-title"> 
         <div className="checkout-name" >{data.item.items[0].name} </div>
          <button type='button' className="delete-btn"  onClick={()=>{ deleteItem(cartArray,data.item.offerId) } }>x</button>
