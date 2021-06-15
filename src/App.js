@@ -99,13 +99,13 @@ const getItemsNumber = (array)=>{
           </Route>
 
           <Route exact path="/shop">
-            <Store cart={cartArray} addToCart={addToCart} giveTotalPrice={giveTotalPrice} totalPrice={totalPrice} />
+            <Store addToCart={addToCart} />
           </Route>
 
           <Route exact path="/cart">
             <Cart cartArray={cartArray} incrementItem={incrementItem}
              decrementItem={decrementItem} deleteItem={deleteItem} totalPrice={totalPrice}
-             totalItems={totalItems} getItemsNumber={getItemsNumber}  />
+             totalItems={totalItems} getItemsNumber={getItemsNumber} giveTotalPrice={giveTotalPrice} />
           </Route>
 
         </Switch>

@@ -16,7 +16,7 @@ const Store = (props) => {
   const [itemArray, setItemArray] = useState([]);
   const [displayedItems, setDisplayedItems] = useState([]);
   // eslint-disable-next-line react/prop-types
-  const { cart, addToCart , giveTotalPrice , totalPrice} = props;
+  const { addToCart } = props;
 
   const getData = async (type) => {
     const response = await fetch('https://fortnite-api.com/v2/shop/br', { mode: 'cors' });
@@ -44,11 +44,6 @@ const Store = (props) => {
       return mythical
     }
   } 
-
-  useEffect(() => {
-    console.log('cartaray', cart);
-    giveTotalPrice(cart)
-  }, [cart,giveTotalPrice]);
 
   useEffect(() => {
     getData(category);
@@ -84,10 +79,6 @@ const Store = (props) => {
     )));
   }, [itemArray,addToCart]);
 
-  useEffect(() => {
-    console.log('total Price',totalPrice)
-  }, [totalPrice]);
-
   return (
     <div className="store">
       <div className="buttons">
@@ -114,7 +105,6 @@ const Store = (props) => {
       <div className="catalogue">
         {displayedItems}
       </div>
-      {totalPrice}
     </div>
   );
 };
