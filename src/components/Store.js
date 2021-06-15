@@ -4,7 +4,7 @@ import './Store.css';
 import rare from "../assets/rare.png"
 import epic from "../assets/epic.png"
 import legendary from "../assets/legendary.png"
-import common from "../assets/gray.png"
+import dc from "../assets/dc.webp"
 import uncommon from "../assets/uncommon.png"
 import mythical from "../assets/mythic.png"
 
@@ -34,8 +34,8 @@ const Store = (props) => {
     else if(rarity==="legendary"){
       return legendary
     }
-    else if(rarity==="common"){
-      return common
+    else if(rarity==="dc"){
+      return dc
     }
     else if(rarity==="uncommon"){
       return uncommon
@@ -56,7 +56,7 @@ const Store = (props) => {
 
   useEffect(() => {
     setDisplayedItems(itemArray.map((item) => (
-      <div key={item.offerId} className="card" id={item.offerId} /* style={{background-image: item.items[0].rarity.value === "rare" ? "rgba(0, 0, 0, 0.555)" : 'black'}} */>
+      <div key={item.offerId} className="card" id={item.offerId} style={{backgroundImage: `url(${getCardBackground(item.items[0].rarity.value)})`}} >
         <div className="card-title"><h2>{item.items[0].name}</h2></div>
         <img className="card-icon" src={item.items[0].images.featured ? item.items[0].images.featured : item.items[0].images.icon} alt="item icon" />
         <div className="card-details">
