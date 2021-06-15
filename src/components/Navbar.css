@@ -17,7 +17,6 @@ ul{
     align-items: center;
     justify-content: space-around;
     position: sticky;
-/*     width: 80%; */
     height: 3rem;
     background-color: rgba(0, 0, 0, 0.555);
     gap: 2rem;
@@ -66,5 +65,3 @@ li{
   background-color: rgba(255, 255, 255, 0.24);
   border-radius: 5px;
  }
-
-
