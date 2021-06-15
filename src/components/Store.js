@@ -1,6 +1,15 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from 'react';
 import './Store.css';
+import rare from "../assets/rare.png"
+import epic from "../assets/epic.png"
+import legendary from "../assets/legendary.png"
+import common from "../assets/common.png"
+import uncommon from "../assets/ucommon.png"
+import mythical from "../assets/mythic.png"
+
+
+
 
 const Store = (props) => {
   const [category, setCategory] = useState('daily');
@@ -15,6 +24,11 @@ const Store = (props) => {
     setItemArray(jsonfile.data[type].entries);
   };
 
+/*    const getCardBackground = (rarity)=>{
+    if(rarity==="rare"){
+
+    }
+  }  */
 
   useEffect(() => {
     console.log('cartaray', cart);
@@ -27,7 +41,7 @@ const Store = (props) => {
 
   useEffect(() => {
     setDisplayedItems(itemArray.map((item) => (
-      <div key={item.offerId} className="card" id={item.offerId}>
+      <div key={item.offerId} className="card" id={item.offerId} /* style={{background-image: item.items[0].rarity.value === "rare" ? "rgba(0, 0, 0, 0.555)" : 'black'}} */>
         <div className="card-title"><h2>{item.items[0].name}</h2></div>
         <img className="card-icon" src={item.items[0].images.featured ? item.items[0].images.featured : item.items[0].images.icon} alt="item icon" />
         <div className="card-details">
