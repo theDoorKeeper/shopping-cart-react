@@ -4,8 +4,8 @@ import './Store.css';
 import rare from "../assets/rare.png"
 import epic from "../assets/epic.png"
 import legendary from "../assets/legendary.png"
-import common from "../assets/common.png"
-import uncommon from "../assets/ucommon.png"
+import common from "../assets/gray.png"
+import uncommon from "../assets/uncommon.png"
 import mythical from "../assets/mythic.png"
 
 
