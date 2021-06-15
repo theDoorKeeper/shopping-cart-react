@@ -15,6 +15,27 @@ const Cart = (props) => {
   const [displayedCart, setDisplayedCart] = useState([]);
   const { cartArray, incrementItem ,decrementItem, deleteItem } = props;
   
+  const getCardBackground = (rarity)=>{
+    if(rarity==="rare"){
+      return rare
+    }
+    else if(rarity==="epic"){
+      return epic
+    }
+    else if(rarity==="legendary"){
+      return legendary
+    }
+    else if(rarity==="dc"){
+      return dc
+    }
+    else if(rarity==="uncommon"){
+      return uncommon
+    }
+    else if(rarity==="myhtical"){
+      return mythical
+    }
+  } 
+
   useEffect(() => {
     setDisplayedCart(cartArray.map((data) => (
       <div key={data.item.offerId} className="checkout-card" id={data.item.offerId}>
