@@ -2,6 +2,14 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from 'react';
 import './Cart.css'
+import rare from "../assets/rare.png"
+import epic from "../assets/epic.png"
+import legendary from "../assets/legendary.png"
+import dc from "../assets/dc.webp"
+import uncommon from "../assets/uncommon.png"
+import mythical from "../assets/mythic.png"
+
+
 
 const Cart = (props) => {
   const [displayedCart, setDisplayedCart] = useState([]);
@@ -14,7 +22,7 @@ const Cart = (props) => {
         <div className="checkout-name" >{data.item.items[0].name} </div>
          <button type='button' className="delete-btn"  onClick={()=>{ deleteItem(cartArray,data.item.offerId) } }>x</button>
         </div>           
-       <img className="checkout-icon" src={/* data.item.items[0].images.featured ? data.item.items[0].images.featured : */ data.item.items[0].images.icon} alt="item icon" />
+       <img className="checkout-icon" src={ data.item.items[0].images.icon} alt="item icon" />
         <div className="buttons">
           <button type='button' className="checkout-btn" onClick={()=>{ decrementItem(cartArray,data.item.offerId) } }>-</button>
             {data.amount}
