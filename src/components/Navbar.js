@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 
 const Navbar = (props) => { 
   const {getItemsNumber , totalItems, cartArray} = props;
@@ -12,7 +13,7 @@ const Navbar = (props) => {
 
   }, [getItemsNumber, cartArray])
   return(<div>
-    <ul>
+    <motion.ul initial={{y:-250}} animate={{y:0}}>
       <li id="home">
         <NavLink activeClassName="active" className="nav-element" exact to="/"> home </NavLink>
       </li>
@@ -27,7 +28,7 @@ const Navbar = (props) => {
     <span style={{ position: "absolute" }}>{totalItems}</span>
 </div></NavLink>
       </li>
-    </ul>
+    </motion.ul>
   </div>)
 };
 
