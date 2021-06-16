@@ -126,3 +126,30 @@
   cursor: pointer;
   font-size: 2rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .category-btn{
+    height: 5rem;
+    width: 25%;
+    font-family: "Burbank Big Condensed";
+    font-size: 1.8rem;
+    cursor: pointer;
+    transform : rotate(2deg);
+    background:transparent;
+    text-align: center;
+    color: #000;
+    border: none;
+    position: relative;
+    line-height: 1;
+
+}
+.category-btn:hover:after {
+    background-color: #eeea4c;
+  }
+  
+  .category-btn span {
+    position: relative;
+    z-index: 100;
+     background-color: #f0ed63;
+  }
+}
