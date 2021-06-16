@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/shopping-cart-react/static/css/main.025420cd.chunk.css",
+    "main.js": "/shopping-cart-react/static/js/main.2d6f0284.chunk.js",
+    "main.js.map": "/shopping-cart-react/static/js/main.2d6f0284.chunk.js.map",
+    "runtime-main.js": "/shopping-cart-react/static/js/runtime-main.72fee3ac.js",
+    "runtime-main.js.map": "/shopping-cart-react/static/js/runtime-main.72fee3ac.js.map",
+    "static/js/2.77b73174.chunk.js": "/shopping-cart-react/static/js/2.77b73174.chunk.js",
+    "static/js/2.77b73174.chunk.js.map": "/shopping-cart-react/static/js/2.77b73174.chunk.js.map",
+    "index.html": "/shopping-cart-react/index.html",
+    "static/css/main.025420cd.chunk.css.map": "/shopping-cart-react/static/css/main.025420cd.chunk.css.map",
+    "static/js/2.77b73174.chunk.js.LICENSE.txt": "/shopping-cart-react/static/js/2.77b73174.chunk.js.LICENSE.txt",
+    "static/media/dc.ab1b11e3.webp": "/shopping-cart-react/static/media/dc.ab1b11e3.webp",
+    "static/media/epic.ba484b83.png": "/shopping-cart-react/static/media/epic.ba484b83.png",
+    "static/media/App.css": "/shopping-cart-react/static/media/fortnite-BG.15a0bcbc.jpg",
+    "static/media/legendary.02f9daf5.png": "/shopping-cart-react/static/media/legendary.02f9daf5.png",
+    "static/media/logo.9b0c9102.svg": "/shopping-cart-react/static/media/logo.9b0c9102.svg",
+    "static/media/mythic.2bfe1c99.png": "/shopping-cart-react/static/media/mythic.2bfe1c99.png",
+    "static/media/rare.489da57c.png": "/shopping-cart-react/static/media/rare.489da57c.png",
+    "static/media/uncommon.2dd4201e.png": "/shopping-cart-react/static/media/uncommon.2dd4201e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.72fee3ac.js",
+    "static/js/2.77b73174.chunk.js",
+    "static/css/main.025420cd.chunk.css",
+    "static/js/main.2d6f0284.chunk.js"
+  ]
+}
