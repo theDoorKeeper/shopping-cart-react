@@ -24,7 +24,7 @@ const Navbar = (props) => {
       <li>
         <NavLink activeClassName="active" className="nav-element" exact to="/cart"> <div style={{ position: "relative" }}>
     <FontAwesomeIcon icon={faShoppingCart} />
-    <span style={{ position: "absolute" }}>2</span>
+    <span style={{ position: "absolute" }}>{totalItems}</span>
 </div></NavLink>
       </li>
     </ul>
