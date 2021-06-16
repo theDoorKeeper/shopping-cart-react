@@ -102,9 +102,9 @@ const Store = (props) => {
           {' '}
         </button>
       </motion.div>
-      <div  className="catalogue">
+      <motion.div  className="catalogue" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5}}>
         {displayedItems}
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
