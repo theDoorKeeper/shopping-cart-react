@@ -7,6 +7,10 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = (props) => { 
   const {getItemsNumber , totalItems, cartArray} = props;
+  useEffect(() => {
+    getItemsNumber(cartArray)
+
+  }, [getItemsNumber, cartArray])
   return(<div>
     <ul>
       <li id="home">
