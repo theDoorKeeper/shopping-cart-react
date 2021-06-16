@@ -8,7 +8,8 @@ import dc from "../assets/dc.webp"
 import uncommon from "../assets/uncommon.png"
 import mythical from "../assets/mythic.png"
 import { motion } from 'framer-motion';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 const Store = (props) => {
@@ -65,12 +66,11 @@ const Store = (props) => {
             {item.regularPrice}
             {' '}
             <img className="vbuck-icon" src="https://fortnite-api.com/images/vbuck.png" alt="vbuck icon" />
-            <button type="button" className="card-buy " id={item.offerId} onClick={() => {
+            <motion.button type="button" className="card-buy " id={item.offerId} onClick={() => {
                addToCart(item);
-             }}>
-              {' '}
-              <span>Add to cart </span>
-            </button>
+             }} whileTap={{rotate:360}}>
+            <FontAwesomeIcon icon={faCartPlus}/>
+            </motion.button>
           </h6>
 
         </div>
@@ -81,7 +81,7 @@ const Store = (props) => {
 
   return (
     <motion.div className="store">
-      <div className="buttons">
+      <motion.div className="buttons" initial={{x:'-100vw'}} animate={{x:0}} transition={{duration:1}}>
         <button type="button" className="category-btn" id="daily" onClick={() => { setCategory('daily'); }}>
           {' '}
           <span>daily</span>
@@ -101,7 +101,7 @@ const Store = (props) => {
           <span> Special featured</span>
           {' '}
         </button>
-      </div>
+      </motion.div>
       <div  className="catalogue">
         {displayedItems}
       </div>

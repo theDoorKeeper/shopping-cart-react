@@ -116,4 +116,11 @@
 .vbuck-icon{
     height: 3rem;
     width: 3rem;
+}.card-buy{
+  height: 3rem;
+  width: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
 }
