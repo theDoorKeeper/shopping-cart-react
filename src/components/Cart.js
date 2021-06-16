@@ -8,7 +8,7 @@ import legendary from "../assets/legendary.png"
 import dc from "../assets/dc.webp"
 import uncommon from "../assets/uncommon.png"
 import mythical from "../assets/mythic.png"
-
+import { motion } from 'framer-motion';
 
 
 const Cart = (props) => {
@@ -46,7 +46,7 @@ const Cart = (props) => {
 
   useEffect(() => {
     setDisplayedCart(cartArray.map((data) => (
-      <div key={data.item.offerId} className="checkout-card" id={data.item.offerId} style={{backgroundImage: `url(${getCardBackground(data.item.items[0].rarity.value)})`}}>
+      <motion.div key={data.item.offerId} className="checkout-card" id={data.item.offerId} style={{backgroundImage: `url(${getCardBackground(data.item.items[0].rarity.value)})`}}>
         <div className="checkout-title"> 
         <div className="checkout-name" >{data.item.items[0].name} </div>
          <button type='button' className="delete-btn"  onClick={()=>{ deleteItem(cartArray,data.item.offerId) } }>x</button>
@@ -62,7 +62,7 @@ const Cart = (props) => {
             <img className="vbuck-icon-checkout" src="https://fortnite-api.com/images/vbuck.png" alt="vbuck icon" /> 
 
         </div>
-      </div>
+      </motion.div>
     )));
   }, [cartArray,incrementItem,decrementItem,deleteItem]);
 
