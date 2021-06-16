@@ -46,7 +46,8 @@ const Cart = (props) => {
 
   useEffect(() => {
     setDisplayedCart(cartArray.map((data) => (
-      <motion.div key={data.item.offerId} className="checkout-card" id={data.item.offerId} style={{backgroundImage: `url(${getCardBackground(data.item.items[0].rarity.value)})`}}>
+      <motion.div key={data.item.offerId} className="checkout-card" id={data.item.offerId} style={{backgroundImage: `url(${getCardBackground(data.item.items[0].rarity.value)})`}}
+      initial={{y:'-100vw'}} animate={{y:0}} transition={{duration:0.6}} >
         <div className="checkout-title"> 
         <div className="checkout-name" >{data.item.items[0].name} </div>
          <button type='button' className="delete-btn"  onClick={()=>{ deleteItem(cartArray,data.item.offerId) } }>x</button>
