@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = () => (
-  <div>
+const Navbar = (props) => { 
+  const {getItemsNumber , totalItems, cartArray} = props;
+  return(<div>
     <ul>
       <li id="home">
         <NavLink activeClassName="active" className="nav-element" exact to="/"> home </NavLink>
@@ -17,10 +18,13 @@ const Navbar = () => (
       </li>
 
       <li>
-        <NavLink activeClassName="active" className="nav-element" exact to="/cart"> cart </NavLink>
+        <NavLink activeClassName="active" className="nav-element" exact to="/cart"> <div style={{ position: "relative" }}>
+    <FontAwesomeIcon icon={faShoppingCart} />
+    <span style={{ position: "absolute" }}>2</span>
+</div></NavLink>
       </li>
     </ul>
-  </div>
-);
+  </div>)
+};
 
 export default Navbar;
