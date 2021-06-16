@@ -1,16 +1,16 @@
+/* eslint-disable consistent-return */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useEffect, useState } from 'react';
 import './Store.css';
-import rare from "../assets/rare.png"
-import epic from "../assets/epic.png"
-import legendary from "../assets/legendary.png"
-import dc from "../assets/dc.webp"
-import uncommon from "../assets/uncommon.png"
-import mythical from "../assets/mythic.png"
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-
+import rare from '../assets/rare.png';
+import epic from '../assets/epic.png';
+import legendary from '../assets/legendary.png';
+import dc from '../assets/dc.webp';
+import uncommon from '../assets/uncommon.png';
+import mythical from '../assets/mythic.png';
 
 const Store = (props) => {
   const [category, setCategory] = useState('daily');
@@ -25,26 +25,26 @@ const Store = (props) => {
     setItemArray(jsonfile.data[type].entries);
   };
 
-    const getCardBackground = (rarity)=>{
-    if(rarity==="rare"){
-      return rare
+  const getCardBackground = (rarity) => {
+    if (rarity === 'rare') {
+      return rare;
     }
-    else if(rarity==="epic"){
-      return epic
+    if (rarity === 'epic') {
+      return epic;
     }
-    else if(rarity==="legendary"){
-      return legendary
+    if (rarity === 'legendary') {
+      return legendary;
     }
-    else if(rarity==="dc"){
-      return dc
+    if (rarity === 'dc') {
+      return dc;
     }
-    else if(rarity==="uncommon"){
-      return uncommon
+    if (rarity === 'uncommon') {
+      return uncommon;
     }
-    else if(rarity==="myhtical"){
-      return mythical
+    if (rarity === 'myhtical') {
+      return mythical;
     }
-  } 
+  };
 
   useEffect(() => {
     getData(category);
@@ -52,7 +52,7 @@ const Store = (props) => {
 
   useEffect(() => {
     setDisplayedItems(itemArray.map((item) => (
-      <motion.div key={item.offerId} className="card" id={item.offerId} style={{backgroundImage: `url(${getCardBackground(item.items[0].rarity.value)})`}}  initial={{x:'-100vw'}} animate={{x:0}}>
+      <motion.div key={item.offerId} className="card" id={item.offerId} style={{ backgroundImage: `url(${getCardBackground(item.items[0].rarity.value)})` }} initial={{ x: '-100vw' }} animate={{ x: 0 }}>
         <div className="card-title"><h2>{item.items[0].name}</h2></div>
         <img className="card-icon" src={item.items[0].images.featured ? item.items[0].images.featured : item.items[0].images.icon} alt="item icon" />
         <div className="card-details">
@@ -66,10 +66,16 @@ const Store = (props) => {
             {item.regularPrice}
             {' '}
             <img className="vbuck-icon" src="https://fortnite-api.com/images/vbuck.png" alt="vbuck icon" />
-            <motion.button type="button" className="card-buy " id={item.offerId} onClick={() => {
-               addToCart(item);
-             }} whileTap={{rotate:360}}>
-            <FontAwesomeIcon icon={faCartPlus}/>
+            <motion.button
+              type="button"
+              className="card-buy "
+              id={item.offerId}
+              onClick={() => {
+                addToCart(item);
+              }}
+              whileTap={{ rotate: 360 }}
+            >
+              <FontAwesomeIcon icon={faCartPlus} />
             </motion.button>
           </h6>
 
@@ -77,11 +83,11 @@ const Store = (props) => {
 
       </motion.div>
     )));
-  }, [itemArray,addToCart]);
+  }, [itemArray, addToCart]);
 
   return (
     <motion.div className="store">
-      <motion.div className="buttons" initial={{x:'-100vw'}} animate={{x:0}} transition={{duration:1}}>
+      <motion.div className="buttons" initial={{ x: '-100vw' }} animate={{ x: 0 }} transition={{ duration: 1 }}>
         <button type="button" className="category-btn" id="daily" onClick={() => { setCategory('daily'); }}>
           {' '}
           <span>daily</span>
@@ -102,7 +108,7 @@ const Store = (props) => {
           {' '}
         </button>
       </motion.div>
-      <motion.div  className="catalogue" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.5}}>
+      <motion.div className="catalogue" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
         {displayedItems}
       </motion.div>
     </motion.div>
