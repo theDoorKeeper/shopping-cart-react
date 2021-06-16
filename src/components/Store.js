@@ -7,7 +7,7 @@ import legendary from "../assets/legendary.png"
 import dc from "../assets/dc.webp"
 import uncommon from "../assets/uncommon.png"
 import mythical from "../assets/mythic.png"
-
+import { motion } from 'framer-motion';
 
 
 
@@ -80,7 +80,7 @@ const Store = (props) => {
   }, [itemArray,addToCart]);
 
   return (
-    <div className="store">
+    <motion.div className="store" initial={{x:'-100vw'}} animate={{x:0}}>
       <div className="buttons">
         <button type="button" className="category-btn" id="daily" onClick={() => { setCategory('daily'); }}>
           {' '}
@@ -102,10 +102,10 @@ const Store = (props) => {
           {' '}
         </button>
       </div>
-      <div className="catalogue">
+      <div  className="catalogue">
         {displayedItems}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
