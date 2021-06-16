@@ -13,7 +13,7 @@ const Navbar = (props) => {
 
   }, [getItemsNumber, cartArray])
   return(<div>
-    <motion.ul initial={{y:-250}} animate={{y:0}}>
+    <motion.ul initial={{y:-250}} animate={{y:0}} transition={{duration:0.5}}>
       <li id="home">
         <NavLink activeClassName="active" className="nav-element" exact to="/"> home </NavLink>
       </li>
