@@ -13,7 +13,7 @@ import mythical from "../assets/mythic.png"
 
 const Cart = (props) => {
   const [displayedCart, setDisplayedCart] = useState([]);
-  const { cartArray, incrementItem ,decrementItem, deleteItem , totalPrice , giveTotalPrice} = props;
+  const { cartArray, incrementItem ,decrementItem, deleteItem , totalPrice , giveTotalPrice ,getItemsNumber, totalItems } = props;
   
   const getCardBackground = (rarity)=>{
     if(rarity==="rare"){
@@ -37,10 +37,12 @@ const Cart = (props) => {
   } 
 
   useEffect(() => {
-    console.log('cartaray', cartArray);
     giveTotalPrice(cartArray)
   }, [cartArray,giveTotalPrice]);
 
+  useEffect(() => {
+    getItemsNumber(cartArray)
+  }, [cartArray,getItemsNumber]);
 
   useEffect(() => {
     setDisplayedCart(cartArray.map((data) => (
@@ -68,9 +70,9 @@ const Cart = (props) => {
     <div className="cart-wrapper" >
       <div className="bought-items">
       <div className="checkout-header"> 
-      total items : 
+      total items : {totalItems}
       <br/>
-      total price :{totalPrice}
+      total price :{totalPrice}<img className="vbuck-icon-checkout" src="https://fortnite-api.com/images/vbuck.png" />
        </div>
         {displayedCart}
       </div>
