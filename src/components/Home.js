@@ -2,7 +2,7 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
 import './Home.css';
-
+import { motion } from 'framer-motion';
 const Home = () => (
   <div className="main">
     <div className="title">
