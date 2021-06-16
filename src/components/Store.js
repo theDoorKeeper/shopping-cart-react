@@ -51,7 +51,7 @@ const Store = (props) => {
 
   useEffect(() => {
     setDisplayedItems(itemArray.map((item) => (
-      <div key={item.offerId} className="card" id={item.offerId} style={{backgroundImage: `url(${getCardBackground(item.items[0].rarity.value)})`}} >
+      <motion.div key={item.offerId} className="card" id={item.offerId} style={{backgroundImage: `url(${getCardBackground(item.items[0].rarity.value)})`}}  initial={{x:'-100vw'}} animate={{x:0}}>
         <div className="card-title"><h2>{item.items[0].name}</h2></div>
         <img className="card-icon" src={item.items[0].images.featured ? item.items[0].images.featured : item.items[0].images.icon} alt="item icon" />
         <div className="card-details">
@@ -75,12 +75,12 @@ const Store = (props) => {
 
         </div>
 
-      </div>
+      </motion.div>
     )));
   }, [itemArray,addToCart]);
 
   return (
-    <motion.div className="store" initial={{x:'-100vw'}} animate={{x:0}}>
+    <motion.div className="store">
       <div className="buttons">
         <button type="button" className="category-btn" id="daily" onClick={() => { setCategory('daily'); }}>
           {' '}
