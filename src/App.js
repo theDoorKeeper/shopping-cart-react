@@ -90,7 +90,7 @@ const getItemsNumber = (array)=>{
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar getItemsNumber={getItemsNumber} totalItems={totalItems}/>
 
         <Switch>
 
