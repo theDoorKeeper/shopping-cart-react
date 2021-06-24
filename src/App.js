@@ -87,7 +87,7 @@ function App() {
 
         <Switch>
 
-          <Route exact path="/">
+          <Route exact path="/shopping-cart-react">
             <Home />
           </Route>
 

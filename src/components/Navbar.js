@@ -16,7 +16,7 @@ const Navbar = (props) => {
     <div>
       <motion.ul initial={{ y: -250 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
         <li id="home">
-          <NavLink activeClassName="active" className="nav-element" exact to="/"> home </NavLink>
+          <NavLink activeClassName="active" className="nav-element" exact to="/shopping-cart-react"> home </NavLink>
         </li>
 
         <li>
