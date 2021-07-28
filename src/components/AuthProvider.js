@@ -10,6 +10,11 @@ import { auth } from "../../firebase";
 function AuthProvider(children) {
     const [currentUser, setcurrentUser] = useState();
 
+    const signUp = (email, password )=>{
+        return   auth.createUserWithEmailAndPassword(email, password)
+      }
+
+      
     const value = {
         currentUser
     }
