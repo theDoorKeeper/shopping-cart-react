@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link, useHistory, useRef, useState} from 'react-router-dom';
+import React, { useRef, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from './AuthProvider';
 
 export function SignUp() {
