@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react/cjs/react.development'
 import { useAuth } from './AuthProvider';
 
@@ -43,9 +44,8 @@ export function SignUp() {
         <button className="signBtn" type="submit" disabled={loading}> Sign UP</button>
 
         </form>
-            
+            <h6>Aready have an account <Link to="login">Log In</Link> </h6>
         </div>
     )
 }
-
 export default SignUp
