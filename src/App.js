@@ -10,6 +10,7 @@ import React from 'react';
 import SignUp from './components/SignUp';
 import { AuthProvider } from './components/AuthProvider';
 import Shop from './components/Shop';
+import Login from './components/Login';
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
 
       <Switch >
         <Route exact path="/signUp" component={SignUp}/>
-        <Route exact path="/" component={Shop}/>
+        <Route exact path="/" component={Login}/>
+        <Route exact path="/shop" component={Shop}/>
       </Switch> 
      </AuthProvider>
   
