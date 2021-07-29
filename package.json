@@ -26,7 +26,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+<<<<<<< HEAD
   "homepage": "https://fortnite-shopping-cart.web.app/",
+=======
+  "homepage": "https://theDoorKeeper.github.io/shopping-cart-react",
+>>>>>>> 853399391bafc8a94072903336e23b9c1087ffa1
   "eslintConfig": {
     "extends": [
       "react-app",

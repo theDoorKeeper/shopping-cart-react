@@ -17,7 +17,11 @@ const Navbar = (props) => {
     <div>
       <motion.ul initial={{ y: -250 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
         <li id="home">
+<<<<<<< HEAD
           <NavLink activeClassName="active" className="nav-element" exact to="/home"> home </NavLink>
+=======
+          <NavLink activeClassName="active" className="nav-element" exact to="/shopping-cart-react"> home </NavLink>
+>>>>>>> 853399391bafc8a94072903336e23b9c1087ffa1
         </li>
 
         <li>
