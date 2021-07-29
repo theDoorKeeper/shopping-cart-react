@@ -44,7 +44,7 @@ export function SignUp() {
         <button className="signBtn" type="submit" disabled={loading}> Sign UP</button>
 
         </form>
-            <h6>Aready have an account <Link to="login">Log In</Link> </h6>
+            <h6>Aready have an account <Link to="/">Log In</Link> </h6>
         </div>
     )
 }
