@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useRef, useState } from 'react/cjs/react.development'
 import { useAuth } from './AuthProvider';
 
@@ -9,6 +9,7 @@ export function Login() {
     const { login } = useAuth();
     const [error, setError] = useState('');
     const [loading, setloading] = useState(false);
+    const history = useHistory();
 
     const  handleSubmit = async (e) =>{
         e.preventDefault();
@@ -16,6 +17,8 @@ export function Login() {
             setError('')
             setloading(true);
              await login(emailRef.current.value,passwordRef.current.value);
+             history.push("/shop")
+             
         } catch(error){
             setError(error.message)
         }
