@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
@@ -16,11 +17,11 @@ const Navbar = (props) => {
     <div>
       <motion.ul initial={{ y: -250 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}>
         <li id="home">
-          <NavLink activeClassName="active" className="nav-element" exact to="/"> home </NavLink>
+          <NavLink activeClassName="active" className="nav-element" exact to="/home"> home </NavLink>
         </li>
 
         <li>
-          <NavLink activeClassName="active" className="nav-element" exact to="/shop"> shop </NavLink>
+          <NavLink activeClassName="active" className="nav-element" exact to="/store"> store </NavLink>
         </li>
 
         <li>
