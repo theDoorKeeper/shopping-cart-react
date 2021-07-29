@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react/cjs/react.development'
 import { useAuth } from './AuthProvider';
 
@@ -20,7 +21,7 @@ export function SignUp() {
         }
         setloading(false)
     }
-
+    
     return (
         <div className="signUp-Wrapper">
         <h2>Log in</h2>
@@ -36,7 +37,7 @@ export function SignUp() {
         <button className="signBtn" type="submit" disabled={loading}> Log in </button>
 
         </form>
-            
+            <h6>Need an account ? <Link to="/signUp">Sing Up</Link></h6>
         </div>
     )
 }
