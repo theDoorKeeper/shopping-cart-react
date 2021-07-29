@@ -1,16 +1,25 @@
 import React from 'react'
 import { useRef } from 'react/cjs/react.development'
+import { useAuth } from './AuthProvider';
 
 export function SignUp() {
     const emailRef = useRef();
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
-
+    const { signUp } = useAuth();
+    
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        if(passwordRef.current.value !== confirmPasswordRef.current.value){
+            return alert("password dont match ")
+        }
+        signUp(emailRef.current.value,passwordRef.current.value);
+    }
 
     return (
         <div className="signUp-Wrapper">
         <h2>Sing Up</h2>
-        <form> 
+        <form onSubmit={(e)=>{handleSubmit(e)}}> 
 
         <label htmlFor="email" >E-mail: </label>
         <input name="email" type="text" required ref={emailRef}/>
