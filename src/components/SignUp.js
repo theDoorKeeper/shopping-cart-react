@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useRef, useState } from 'react/cjs/react.development'
 import { useAuth } from './AuthProvider';
 
@@ -10,6 +10,7 @@ export function SignUp() {
     const { signUp } = useAuth();
     const [error, setError] = useState('');
     const [loading, setloading] = useState(false);
+    const history = useHistory();
 
     const  handleSubmit = async (e) =>{
         e.preventDefault();
@@ -19,7 +20,8 @@ export function SignUp() {
         try {
             setError('')
             setloading(true);
-             await signUp(emailRef.current.value,passwordRef.current.value);
+            await signUp(emailRef.current.value,passwordRef.current.value);
+            history.push("/shop")
         } catch(error){
             setError(error.message)
         }
