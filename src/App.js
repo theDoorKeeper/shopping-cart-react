@@ -8,17 +8,15 @@ import {
 import React from 'react';
 /* import './App.css'; */
 import SignUp from './components/SignUp';
-import { AuthProvider } from './components/AuthProvider';
+import { AuthProvider} from './components/AuthProvider';
 import Shop from './components/Shop';
 import Login from './components/Login';
 
 function App() {
-
   return (
   
      <Router> 
       <AuthProvider>
-
       <Switch >
         <Route exact path="/signUp" component={SignUp}/>
         <Route exact path="/" component={Login}/>
