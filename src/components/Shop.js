@@ -109,7 +109,7 @@ import {
               <Home />
             </Route>
   
-            <Route exact path="/shop">
+            <Route exact path="/store">
               <Store addToCart={addToCart} />
             </Route>
   
