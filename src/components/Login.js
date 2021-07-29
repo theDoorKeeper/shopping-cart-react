@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react/cjs/react.development'
 import { useAuth } from './AuthProvider';
 
-export function SignUp() {
+export function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
     const { login } = useAuth();
@@ -42,4 +42,4 @@ export function SignUp() {
     )
 }
 
-export default SignUp
+export default Login
