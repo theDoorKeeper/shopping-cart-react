@@ -88,7 +88,7 @@ import {
             setError("")
             try{
                 await logout()
-                history.push("/login") 
+                history.push("/") 
             }
             catch(err){
                 setError(err.message)
