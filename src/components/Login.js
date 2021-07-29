@@ -6,7 +6,7 @@ import { useAuth } from './AuthProvider';
 export function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const { login } = useAuth();
+    const { login, currentUser } = useAuth();
     const [error, setError] = useState('');
     const [loading, setloading] = useState(false);
     const history = useHistory();
@@ -26,7 +26,9 @@ export function Login() {
     }
     
     return (
+        
         <div className="signUp-Wrapper">
+             {currentUser && history.push('./shop') }
         <h2>Log in</h2>
         {error && <h1 style={{color:"red"}}>{error}</h1> }
         <form onSubmit={(e)=>{handleSubmit(e)}}> 
