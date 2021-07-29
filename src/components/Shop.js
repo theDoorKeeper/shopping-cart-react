@@ -11,10 +11,9 @@ import {
   import Home from './components/Home';
   import Store from './components/Store';
   import Cart from './components/Cart';
-  import SignUp from './components/SignUp';
   import { AuthProvider } from './components/AuthProvider';
   
-  function App() {
+  function Shop() {
     const [cartArray, setCartArray] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
@@ -84,15 +83,13 @@ import {
   
     return (
     <AuthProvider>
-      <SignUp/>
-      
        <Router>
         <div className="App">
           <Navbar getItemsNumber={getItemsNumber} totalItems={totalItems} cartArray={cartArray} />
   
           <Switch>
   
-            <Route exact path="/shopping-cart-react/">
+            <Route exact path="/Home">
               <Home />
             </Route>
   
@@ -120,5 +117,5 @@ import {
     );
   }
   
-  export default App;
+  export default Shop;
   
