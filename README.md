@@ -1,4 +1,4 @@
-Live : https://thedoorkeeper.github.io/shopping-cart-react/
+Live : fortnite-shopping-cart.web.app
 
 
 Desc : shopping cart made with react and react router dom , used framer motion for the animations , it has a Navbar with the number of items purchased next to the cart icon , the catalogue is fetched from the Fortnine API , you can increment and decrement the number of items bought from the catalogue and the cart , i used lifted states to send the data between components .
